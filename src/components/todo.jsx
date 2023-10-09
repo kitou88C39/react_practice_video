@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-
-export const Todo = (todoItem) => {
+//TodoList.jsxのtodoItemを受け取る
+export const Todo = ({ todoItem }) => {
+  console.log('todoItem', todoItem);
   //todoがデータ、setTodoが変更するための関数
   //useStateの()の中は、デフォルトの値が入るので、todoがinputの中に表示される
-  const [todo, setTodo] = useState();
+  //todoに入ってくる初期値の中にtodoItemを入れる
+  const [todo, setTodo] = useState(todoItem);
   return (
     <>
       <div>TODO</div>
+      <p>{todo.id}</p>
       <input
         type='text'
-        value={todo}
+        value={todo.title}
         onChange={(event) => {
           //setTodoを使って変更する値を入れる
-          setTodo(event.target.value);
+          //スプレッド構文を使うことによりオブジェクトとか配列を展開できる
+          //todoに一つのidとtitleが入っているオブジェクトを展開する
+          //展開したもののtitleの部分に今回入力した値に上書きをする
+          setTodo({ ...todo, title: event.target.value });
         }}
       />
     </>
