@@ -13,10 +13,11 @@ export const TodoList = () => {
   return (
     <div>
       <h1>TodoList</h1>
-      //map()メソッドは、与えられた関数の配列の全ての要素に対して呼び出し、その結果からなる新しい配列を生成する。
-      //todoの中に、idとtitleが入ってくる
+      {/* map()メソッドは、与えられた関数の配列の全ての要素に対して呼び出し、その結果からなる新しい配列を生成する。
+      todoの中に、idとtitleが入ってくる */}
       {TodoList.map((todo) => {
-        return <Todo />;
+        // todoItemにTodoListをmapで渡しているので、TodoListのオブジェクト１ずつが入ってTodoコンポーネントが5つ出来上がる
+        return <Todo todoItem={todo} />;
       })}
     </div>
   );
