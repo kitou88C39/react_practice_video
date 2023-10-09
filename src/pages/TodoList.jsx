@@ -17,7 +17,7 @@ export const TodoList = () => {
       todoの中に、idとtitleが入ってくる */}
       {TodoList.map((todo) => {
         // todoItemにTodoListをmapで渡しているので、TodoListのオブジェクト１ずつが入ってTodoコンポーネントが5つ出来上がる
-        return <Todo todoItem={todo} />;
+        return <Todo key={todo.id} todoItem={todo} />;
       })}
     </div>
   );
