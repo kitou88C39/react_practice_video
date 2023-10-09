@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const Todo = () => {
+export const Todo = (todoItem) => {
   //todoがデータ、setTodoが変更するための関数
   //useStateの()の中は、デフォルトの値が入るので、todoがinputの中に表示される
   const [todo, setTodo] = useState();
