@@ -1,7 +1,7 @@
 import React from 'react';
 import { Todo } from './components/Todo';
 
-const TodoList = [
+const todoList = [
   { id: 1, title: '筋トレ' },
   { id: 2, title: '勉強' },
   { id: 3, title: '犬の散歩' },
