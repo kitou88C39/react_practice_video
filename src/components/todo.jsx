@@ -10,6 +10,10 @@ export const Todo = ({ todoItem }) => {
     <>
       <div>TODO</div>
       <p>{todo.id}</p>
+      {/* チェックボックスを作成する */}
+      <div>
+        <input type='heckbox' checked={todo.done} />
+      </div>
       <input
         type='text'
         value={todo.title}
