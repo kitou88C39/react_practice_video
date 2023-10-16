@@ -15,7 +15,14 @@ export const Todo = ({ todoItem }) => {
       </div>
       {/* チェックボックスを作成する */}
       <div>
-        <input type='checkbox' checked={todo.done} />
+        <input
+          type='checkbox'
+          checked={todo.done}
+          onChange={setTodo({
+            ...todo,
+            done: !todo.done,
+          })}
+        />
       </div>
       <input
         type='text'
