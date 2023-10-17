@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 //TodoList.jsxのtodoItemとsetTodoを受け取る
 export const Todo = ({ todoItem, setTitleById, setToggleDoneById }) => {
   //console.log('todoItem', todoItem);
   //todoがデータ、setTodoが変更するための関数
   //useStateの()の中は、デフォルトの値が入るので、todoがinputの中に表示される
   //todoに入ってくる初期値の中にtodoItemを入れる
-  const [todo, setTodo] = useState(todoItem);
 
   // const setTodoListHandler = (todoId) => {
   //   setToggleDoneById(todoId);
@@ -13,21 +12,21 @@ export const Todo = ({ todoItem, setTitleById, setToggleDoneById }) => {
   return (
     <>
       <div>TODO</div>
-      <p>{todo.id}</p>
+      <p>{todoItem}</p>
       <div>
-        <p>{todo.done ? '完了' : '未完了'}</p>
+        <p>{todoItem.done ? '完了' : '未完了'}</p>
       </div>
       {/* チェックボックスを作成する */}
       <div>
         <input
           type='checkbox'
-          checked={todo.done}
-          onChange={() => setToggleDoneById(todo.id)({})}
+          checked={todoItem.done}
+          onChange={() => setToggleDoneById(todoItem.id)({})}
         />
       </div>
       <input
         type='text'
-        value={todo.title}
+        value={todoItem.title}
         onChange={(event) => {
           //setTodoを使って変更する値を入れる
           //スプレッド構文を使うことによりオブジェクトとか配列を展開できる
