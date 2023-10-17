@@ -27,6 +27,21 @@ export const TodoList = () => {
     );
   };
 
+  const setTitleById = (todoId) => {
+    setTodoList(
+      todoList.map((todo) => {
+        if (todo.id === todoId) {
+          return {
+            ...todo,
+            title: todo.title,
+          };
+        } else {
+          return todo;
+        }
+      })
+    );
+  };
+
   return (
     <div>
       <p>
@@ -44,6 +59,7 @@ export const TodoList = () => {
             key={todo.id}
             todoItem={todo}
             setToggleDoneById={setToggleDoneById}
+            setTitleById={setTitleById}
           />
         );
       })}
