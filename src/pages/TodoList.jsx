@@ -42,6 +42,8 @@ export const TodoList = () => {
     );
   };
 
+  const todoDoneCount = todoList.filter((todo) => todo.done).length;
+
   return (
     <div>
       <p>
