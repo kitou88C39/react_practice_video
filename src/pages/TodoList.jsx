@@ -23,7 +23,8 @@ export const TodoList = () => {
       {todoList.map((todo) => {
         //todoItemにTodoListをmapで渡しているので、TodoListのオブジェクト１ずつが入ってTodoコンポーネントが5つ出来上がる
         //mapとか配列を展開してReactのHTMLを書いている時は、絶対にkeyを渡す
-        return <Todo key={todo.id} todoItem={todo} />;
+        //setTodoListを渡す
+        return <Todo key={todo.id} todoItem={todo} setTodoList={setTodoList} />;
       })}
     </div>
   );
