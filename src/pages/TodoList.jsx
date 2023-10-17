@@ -42,10 +42,12 @@ export const TodoList = () => {
     );
   };
 
+  const todoDoneCount = todoList.filter((todo) => todo.done).length;
+
   return (
     <div>
       <p>
-        TODO達成個数 {}/ TODO数{todoList.length}
+        TODO達成個数 {todoDoneCount}/ TODO数{todoList.length}
       </p>
       <h1>TodoList</h1>
       {/* map()メソッドは、与えられた関数の配列の全ての要素に対して呼び出し、その結果からなる新しい配列を生成する。
