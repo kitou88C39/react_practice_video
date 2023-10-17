@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 //TodoList.jsxのtodoItemとsetTodoを受け取る
-export const Todo = ({ todoItem, setTodoList }) => {
+export const Todo = ({ todoItem, setToggleDoneById }) => {
   //console.log('todoItem', todoItem);
   //todoがデータ、setTodoが変更するための関数
   //useStateの()の中は、デフォルトの値が入るので、todoがinputの中に表示される
   //todoに入ってくる初期値の中にtodoItemを入れる
   const [todo, setTodo] = useState(todoItem);
 
-  const setTodoListHandler = (list) => {
-    setTodoList();
-  };
+  // const setTodoListHandler = (todoId) => {
+  //   setToggleDoneById(todoId);
+
   return (
     <>
       <div>TODO</div>
@@ -22,12 +22,7 @@ export const Todo = ({ todoItem, setTodoList }) => {
         <input
           type='checkbox'
           checked={todo.done}
-          onChange={() =>
-            setTodo({
-              ...todo,
-              done: !todo.done,
-            })
-          }
+          onChange={() => setToggleDoneById(todo.id)({})}
         />
       </div>
       <input
