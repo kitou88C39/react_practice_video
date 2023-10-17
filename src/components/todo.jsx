@@ -32,7 +32,7 @@ export const Todo = ({ todoItem, setTitleById, setToggleDoneById }) => {
           //スプレッド構文を使うことによりオブジェクトとか配列を展開できる
           //todoに一つのidとtitleが入っているオブジェクトを展開する
           //展開したもののtitleの部分に今回入力した値に上書きをする
-          setTitleById(event.target.value);
+          setTitleById(todoItem.id, event.target.value);
         }}
       />
     </>
