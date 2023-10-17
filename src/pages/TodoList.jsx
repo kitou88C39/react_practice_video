@@ -12,6 +12,21 @@ export const TodoList = () => {
     { id: 5, title: '料理', done: false },
   ]);
 
+  const setToggleDoneById = (todoId) => {
+    setTodoList(
+      todoList.map((todo) => {
+        if (todo.id === todoId) {
+          return {
+            ...todo,
+            done: !todo.done,
+          };
+        } else {
+          return todo;
+        }
+      })
+    );
+  };
+
   return (
     <div>
       <p>
@@ -24,7 +39,13 @@ export const TodoList = () => {
         //todoItemにTodoListをmapで渡しているので、TodoListのオブジェクト１ずつが入ってTodoコンポーネントが5つ出来上がる
         //mapとか配列を展開してReactのHTMLを書いている時は、絶対にkeyを渡す
         //setTodoListを渡す
-        return <Todo key={todo.id} todoItem={todo} setTodoList={setTodoList} />;
+        return (
+          <Todo
+            key={todo.id}
+            todoItem={todo}
+            setToggleDoneById={setToggleDoneById}
+          />
+        );
       })}
     </div>
   );

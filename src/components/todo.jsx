@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-//TodoList.jsxのtodoItemを受け取る
-export const Todo = ({ todoItem }) => {
-  console.log('todoItem', todoItem);
+//TodoList.jsxのtodoItemとsetTodoを受け取る
+export const Todo = ({ todoItem, setTodoList }) => {
+  //console.log('todoItem', todoItem);
   //todoがデータ、setTodoが変更するための関数
   //useStateの()の中は、デフォルトの値が入るので、todoがinputの中に表示される
   //todoに入ってくる初期値の中にtodoItemを入れる
   const [todo, setTodo] = useState(todoItem);
+
+  const setTodoListHandler = (list) => {
+    setTodoList();
+  };
   return (
     <>
       <div>TODO</div>
