@@ -18,10 +18,12 @@ export const Todo = ({ todoItem }) => {
         <input
           type='checkbox'
           checked={todo.done}
-          onChange={setTodo({
-            ...todo,
-            done: !todo.done,
-          })}
+          onChange={() =>
+            setTodo({
+              ...todo,
+              done: !todo.done,
+            })
+          }
         />
       </div>
       <input
