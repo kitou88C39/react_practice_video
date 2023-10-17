@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 //TodoList.jsxのtodoItemとsetTodoを受け取る
-export const Todo = ({ todoItem, setToggleDoneById }) => {
+export const Todo = ({ todoItem, setTitleById, setToggleDoneById }) => {
   //console.log('todoItem', todoItem);
   //todoがデータ、setTodoが変更するための関数
   //useStateの()の中は、デフォルトの値が入るので、todoがinputの中に表示される
@@ -33,7 +33,7 @@ export const Todo = ({ todoItem, setToggleDoneById }) => {
           //スプレッド構文を使うことによりオブジェクトとか配列を展開できる
           //todoに一つのidとtitleが入っているオブジェクトを展開する
           //展開したもののtitleの部分に今回入力した値に上書きをする
-          setTodo({ ...todo, title: event.target.value });
+          setTitleById(event.target.value);
         }}
       />
     </>
