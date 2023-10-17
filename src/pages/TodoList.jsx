@@ -27,13 +27,13 @@ export const TodoList = () => {
     );
   };
 
-  const setTitleById = (todoId) => {
+  const setTitleById = (todoId, title) => {
     setTodoList(
       todoList.map((todo) => {
         if (todo.id === todoId) {
           return {
             ...todo,
-            title: todo.title,
+            title,
           };
         } else {
           return todo;
